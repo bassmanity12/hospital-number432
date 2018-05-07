@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>24/7 Doctor | Calendar</title>
+    <title>24/7 Doctor | Appointments</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../CSS/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,34 +24,33 @@
       <div class="current-month">May 2018</div>
     </div>
       <div class="calendar">
-          <?php
-          require_once("dbConnection.php");
+        <?php
+          require_once("databaseConnection.php");
+          include("dbcheck.php")
           
           function showEvent(){
           
               $final_event = "<div>";
-          
               $dbConn = new DatabaseConnection();
               $pdo = $dbConn->getConnection();
-          
-              $sql = 'SELECT * FROM events WHERE patient_id = 1';// here, instead of 1 should be id of user who is present on the page now
+
+              $sql = "SELECT * FROM events WHERE patient_id = 'patients.id;'";
               $q = $pdo->query($sql);
           
-              echo "<table>";
+              echo ('<table class="table100 ver2 m-b-110"><thead><tr class="row100 head"><th class="cell100 column1">Class name</th><th class="cell100 column2">Type</th><th class="cell100 column3">Hours</th><th class="cell100 column4">Trainer</th><th class="cell100 column5">Spots</th></tr></thead>');
           
               $q->setFetchMode(PDO::FETCH_ASSOC);
               while ($r = $q->fetch()) {
-                  echo sprintf('Appointment id: %s "<tr><td>" Date: %s "<tr><td>" Doctor\'s id: %s <br/>', $r['id'], $r['date'], $r['doctor_id']);
+                  $appt = sprintf('Appointment id: %s "<tr class="row100 body"><td class="cell100 column1>"Date: %s "<tr class="row100 body><td class="cell100 column1>"Doctor\'s id: %s <br/>',$r['id'], $r['date'], $r['doctor_id']);
+                  echo $appt;
           
               echo "</table>";
               }
           }
           
-          showEvent();//It will redirect to  a new page where the created div will be shown. 
-                      //I didn't manage to make it the way that it outputs on the same page, but will work on it later on
+          showEvent(); 
           
           ?>
-          
           <div id="show_event"></div>
       </div>
  </div>
@@ -65,15 +64,15 @@
       <!--<div class="avatar__name">John Smith</div> -->
     </div>
     <nav class="menu">
-      <a class="menu__item" href="calendar.html">
+      <a class="menu__item" href="profile.php">
         <i class="menu__icon fa fa-home"></i>
         <span class="menu__text">OVERVIEW</span>
       </a>
-      <a class="menu__item" href="profile.html">
+      <a class="menu__item menu__item--active" href="profile.php">
         <i class="menu__icon fa fa-envelope"></i>
         <span class="menu__text">PROFILE</span>
       </a>
-      <a class="menu__item menu__item--active" href="appointments.html">
+      <a class="menu__item" href="appointments.php">
         <i class="menu__icon fa fa-list"></i>
         <span class="menu__text">APPOINTMENTS</span>
       </a>

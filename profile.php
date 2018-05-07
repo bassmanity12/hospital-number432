@@ -115,7 +115,7 @@
         <i class="menu__icon fa fa-envelope"></i>
         <span class="menu__text">PROFILE</span>
       </a>
-      <a class="menu__item" href="appointments.html">
+      <a class="menu__item" href="appointments.php">
         <i class="menu__icon fa fa-list"></i>
         <span class="menu__text">APPOINTMENTS</span>
       </a>

@@ -1,12 +1,11 @@
-
-
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>24/7 Doctor | Calendar</title>
+    <title>24/7 Doctor | Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="CSS/style2.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
@@ -29,9 +28,9 @@
         <div class="container">
             <div class="row">
             <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-                 <A href="edit.html" >Edit Profile</A>
+                 <a href="edit.html" >Edit Profile</a>
 
-              <A href="index.html" >Logout</A>
+              <a href="index.html" >Logout</a>
              <br>
             </div>
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
@@ -42,7 +41,6 @@
                           include  "dbcheck.php";
                           echo("$row[fname]"." "."$row[lname]");
                           ?>
-
                       </h4>
                   </div>
                   <div class="panel-body">
@@ -90,7 +88,7 @@
                         </table>
                       </div>
                       <div>
-                        <a href="appointments.html" class="btn btn-primary">Manage Your Appointments</a>
+                        <a href="appointments.php" class="btn btn-primary">Manage Your Appointments</a>
                       </div>
                     </div>
                   </div>
@@ -113,7 +111,7 @@
         <i class="menu__icon fa fa-home"></i>
         <span class="menu__text">OVERVIEW</span>
       </a>
-      <a class="menu__item menu__item--active" href="profile.html">
+      <a class="menu__item menu__item--active" href="profile.php">
         <i class="menu__icon fa fa-envelope"></i>
         <span class="menu__text">PROFILE</span>
       </a>

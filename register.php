@@ -24,11 +24,16 @@ $check_db = "SELECT * FROM patients WHERE email ='$email'";
 $result = $conn->query($check_db);
 $row = $result->fetch_assoc();
 
-if($result->num_rows == 0) {
-    $sql  = "INSERT INTO patients(fname,lname,gender,email,age,password) VALUES ('$fname','$lname','$gender','$email','$age','$pass')";
 
+if($result->num_rows == 0) {
+    $sql = "INSERT INTO patients(fname,lname,gender,email,age,password) VALUES ('$fname','$lname','$gender','$email','$age','$pass')";
+
+    if (mysqli_query($conn, $sql)) {
+//    echo("$fname");
+//    echo "New record created successfully";
         header('Location:HTML/login.html');
     }
+}
 else{
     echo("email already exist please try different e-mail");
     header("Location: HTML/index.html");

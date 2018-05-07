@@ -26,10 +26,11 @@ if($result->num_rows == 0) {
 
     header("location: HTML/login.html");
     echo("email not found");
+
+
 }
 if($upass != $row['password']) {
-$error = "password does not match";
-header("location: HTML/login.html");
+echo("passwords dont match");
 }
 else{
 

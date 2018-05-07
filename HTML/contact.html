@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Appointment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div id="navbar" class="navbarMain">
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a class="active" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<!--///////////////////// Contact Form Below ///////////////////// -->
+<div id="container" class="contactForm">
+   <center>
+       <img src="../img/contactUs.png">
+       <h1>Contact Us!</h1>
+       <p><b>Note: </b>Required fields are red upon hover.</p>
+    </center>
+   <form>
+        <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="First Name" required/>
+                </div>
+                 <div class="form-group col-md-6">
+                     <label for="lastName">Last Name</label>
+                      <input type="text" class="form-control required" id="lastName" placeholder="Last Name" required/>
+                </div>   
+        </div>            
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email" required/>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZipCode">Zipcode</label>
+            <input type="text" class="form-control" id="inputZipCode" placeholder="01234">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputCity">City</label>
+            <select id="inputCity" class="form-control">
+              <option selected>Choose...</option>
+              <option>Tallinn</option>
+              <option>Pärnu</option>
+              <option>Narva</option>
+              <option>Tartu</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+             <div class="form-group col-md-6">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="reschedule" value="reschedule" checked>
+                <label class="form-check-label" for="rescheduleOption">
+                  I would like to reschedule an appointment.
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="profileOption" value="profileOption">
+                <label class="form-check-label" for="profileOption">
+                  I have a problem with my profile.
+                </label>
+              </div>
+              <div class="form-check check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="callOption" value="callOption">
+                <label class="form-check-label" for="callOption">
+                  I would like a 15 minute call with a doctor.
+                </label>
+              </div>
+              </div>
+        </div>
+        <div class="form-row form-group col-md-12">
+            <center><button type="submit" class="btn btn-primary">Submit Inquiry</button></center>
+        </div>
+      </form>
+</div>
+
+<!--adding a footer-->
+<div id="footer" class="navbarMain">
+    <ul style="float:left"></ul>
+        <li class="copyright">Copyright (c) 2018 Medical Booking Inc.</li>
+    <ul style="float: right">
+        <li><button class="buttonFooter" data-container="body" data-toggle="popover"  data-trigger="hover" data-placement="top"
+            data-content="Subject to the express provisions of this notice:
+            (a)	we, together with our licensors, own and control all the copyright and other intellectual property rights in our website and the material on our website; and
+            (b)	all the copyright and other intellectual property rights in our website and the material on our website are reserved."
+            >Copyright Policy</button></li>
+        <li><button class="buttonFooter" data-container="body" data-toggle="popover"  data-trigger="hover" data-placement="top"
+            data-content="Our website contains general medical information. The medical information is not advice and should not be treated as such.">Disclaimer</button></li>
+    </ul>
+</div>
+
+<script src="../JS/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

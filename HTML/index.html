@@ -20,7 +20,6 @@
 </ul>
 </div>
         <!-- //////////////////////////Slider Below////////////////////////// -->
-
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -98,9 +97,6 @@
         ​
 
         <div id="loginpopup" class="modal" style="display:none;">
-
-
-
             <form class="modal-content animate" method="post" action="http://localhost/hospital-number432/profile.php">
 
                 <div class="imgcontainer">
@@ -116,8 +112,6 @@
                 
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
-                        <label for="psw"><b>Retype Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw_r" required>
                 
                         <button type="submit">Login</button>
                         <label>
@@ -127,14 +121,12 @@
                 
                     <div class="container" style="background-color:#f1f1f1">
                         <button type="button" class="cancelbtn">Cancel</button>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
+                        <span class="psw"><a href="#">Forgot Password?</a></span>
                     </div>
                 </form>
         </div>
 <!--creating a similar register popup;-->
 <div id="registerpopup" class="modal" style="display:none">
-
-
 
     <form class="modal-content animate" action="../register.php" method="post">
 
@@ -142,34 +134,28 @@
 
             <span onclick="hideregisterpopup()" class="close" title="Close Modal">&times;</span>
 
-            <img src="../logo.png" alt="logo" class="logo">
+            <img src="../img/logo.png" alt="logo" class="logo">
 
         </div>
-
-        ​
-
         <div class="container">
-
             <label for="fname" ><b>First Name</b></label>
-
             <input type="text" class="formtext" placeholder="First Name" name="fname" required>
+
             <label for="lname" ><b>Last Name</b></label>
             <input type="text" class="formtext" placeholder="Last Name" name="lname" required>
-
-
-
-            ​
+          ​
             <label for="Gender"><b>Gender</b></label><br>
             <input type="radio" name="gender" value="male" checked> Male<br>
             <input type="radio" name="gender" value="female"> Female<br>
 
             <label for="Email"><b>Email</b></label>
             <input type="text" class="formtext" placeholder="E-mail" name="email" required>
+
             <label for="Age"><b>Age</b></label>
             <input type="number" class="formtext" placeholder="E-mail" name="age" required>
             <br>
-            <label for="psw"><b>Password</b></label>
 
+            <label for="psw"><b>Password</b></label>
             <input type="password"class="formtext" placeholder="Please select a Password" name="psw" required>
 
             <label for="psw"><b>Veify Password</b></label>
@@ -185,9 +171,6 @@
             </label>
 
         </div>
-
-        ​
-
         <div class="container" style="background-color:#f1f1f1">
 
             <button type="button" onclick="hideregisterpopup()" class="cancelbtn">Cancel</button>

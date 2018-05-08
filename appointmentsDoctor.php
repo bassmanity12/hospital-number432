@@ -35,6 +35,12 @@
             <div class="toolbar">
                 <div class="current-month">May 2018</div>
             </div>
+            <?php
+            if (isset($_SESSION['message']) && trim($_SESSION['message']) != '') {
+                echo "<div class='alert alert-primary'>{$_SESSION['message']}</div>";
+                $_SESSION['message'] = '';
+            }
+            ?>
             <div class="calendar">
                 <div class="table100 ver2 m-b-110">
                     <div class="table100-head">
@@ -45,6 +51,7 @@
                                 <th class="cell100 column2">Date</th>
                                 <th class="cell100 column3">Patient ID</th>
                                 <th class="cell100 column4">Approved</th>
+                                <th class="cell100 column5"></th>
                             </tr>
                             </thead>
                         </table>
@@ -63,15 +70,23 @@
 
                                     while ($r = $q->fetch()) {
                                         echo "<tr class='row100 body'>";
+                                            $id = $r['id'];
                                             echo "<td class='cell100 column1'>" . $r['id'] . "</td>";
                                             echo "<td class='cell100 column2'>" . $r['date'] . "</td>";
                                             echo "<td class='cell100 column3'>" . $r['patient_id'] . "</td>";
                                             echo "<td class='cell100 column4'>" . $r['allowed'] . "</td>";
-                                            
-                                            if($r['allowed'] == 'Y'){		//checks if allowed, if not yet -> outputs buttons to allow/reject
-                                                echo sprintf('<form action= <?php rejectEvent(%d) ?>' method='post'><input type='submit' value='Reject' /></form>', $r['id']);  
-                                                echo sprintf('<form action= <?php approveEvent(%d) ?>' method='post'><input type='submit' value='Approve' /></form>', $r['id']);
-                                            }
+                                            echo "<td class='cell100 column5'>";
+                                                if ($r['allowed'] == 'Y') {
+                                                    echo "<center><a href='appointmentsDoctorActions.php?event_id={$r['id']}&action=rejectEvent' class='btn btn-outline-secondary'>Reject</a></center>";
+                                                    //echo "<button type='submit' formaction='actions.php'>Reject</button>";
+                                                    //echo "</form>";
+                                                } else {
+                                                    echo "<center><a href='appointmentsDoctorActions.php?event_id={$r['id']}&action=approveEvent' class='btn btn-outline-secondary'>Approve</a></center>";
+                                                    //echo "<form method='post'>";
+                                                    //    echo "<button type='submit' formaction='actions.php'>Approve</button>";
+                                                    //echo "</form>";
+                                                }
+                                            echo "</td>";
                                         echo "</tr>";
                                     }
                                 ?>
@@ -97,7 +112,7 @@
                 <i class="menu__icon fa fa-envelope"></i>
                 <span class="menu__text">PROFILE</span>
             </a>
-            <a class="menu__item menu__item--active" href="appointments.php">
+            <a class="menu__item menu__item--active" href="appointmentsDoctor.php">
                 <i class="menu__icon fa fa-list"></i>
                 <span class="menu__text">APPOINTMENTS</span>
             </a>
@@ -121,7 +136,7 @@
                 data-content="Our website contains general medical information. The medical information is not advice and should not be treated as such.">Disclaimer</button></li>
         </ul>
     </div>
-    <script src="../JS/script.js"></script>
+    <script src="./JS/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

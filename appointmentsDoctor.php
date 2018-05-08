@@ -32,9 +32,10 @@
     </div>
     <div class="wrapper">
         <main>
-            <div class="toolbar">
-                <div class="current-month">May 2018</div>
-            </div>
+        <div class="toolbar">
+            <div class="col-md-6 current-month">May 2018</div>
+            <div class="col-md-6" style="text-align: right" > <a href="logout.php">Logout</a></div>
+        </div>
             <?php
             if (isset($_SESSION['message']) && trim($_SESSION['message']) != '') {
                 echo "<div class='alert alert-primary'>{$_SESSION['message']}</div>";

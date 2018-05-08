@@ -32,8 +32,9 @@
     </div>
     <div class="wrapper">
         <main>
-            <div class="toolbar">
-                <div class="current-month">May 2018</div>
+        <div class="toolbar">
+            <div class="col-md-6 current-month">May 2018</div>
+                <div class="col-md-6" style="text-align: right" > <a href="logout.php">Logout</a></div>
             </div>
             <div class="calendar">
                 <div class="table100 ver2 m-b-110">

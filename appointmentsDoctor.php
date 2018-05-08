@@ -50,9 +50,10 @@
                             <tr class="row100 head">
                                 <th class="cell100 column1">Appointment ID</th>
                                 <th class="cell100 column2">Date</th>
-                                <th class="cell100 column3">Patient ID</th>
-                                <th class="cell100 column4">Approved</th>
-                                <th class="cell100 column5"></th>
+                                <th class="cell100 column3">Time</th>
+                                <th class="cell100 column4">Patient ID</th>
+                                <th class="cell100 column5">Approved</th>
+                                <th class="cell100 column6"></th>
                             </tr>
                             </thead>
                         </table>
@@ -74,9 +75,10 @@
                                             $id = $r['id'];
                                             echo "<td class='cell100 column1'>" . $r['id'] . "</td>";
                                             echo "<td class='cell100 column2'>" . $r['date'] . "</td>";
-                                            echo "<td class='cell100 column3'>" . $r['patient_id'] . "</td>";
-                                            echo "<td class='cell100 column4'>" . $r['allowed'] . "</td>";
-                                            echo "<td class='cell100 column5'>";
+                                            echo "<td class='cell100 column3'>" . $r['time'] . "</td>";
+                                            echo "<td class='cell100 column4'>" . $r['patient_id'] . "</td>";
+                                            echo "<td class='cell100 column5'>" . $r['allowed'] . "</td>";
+                                            echo "<td class='cell100 column6'>";
                                                 if ($r['allowed'] == 'Y') {
                                                     echo "<center><a href='appointmentsDoctorActions.php?event_id={$r['id']}&action=rejectEvent' class='btn btn-outline-secondary'>Reject</a></center>";
                                                     //echo "<button type='submit' formaction='actions.php'>Reject</button>";

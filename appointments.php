@@ -44,7 +44,9 @@
                             <tr class="row100 head">
                                 <th class="cell100 column1">Appointment ID</th>
                                 <th class="cell100 column2">Date</th>
-                                <th class="cell100 column3">Doctor ID</th>
+                                <th class="cell100 column3">Time</th>
+                                <th class="cell100 column4">Doctor ID</th>
+                                <th class="cell100 column5"></th>
                             </tr>
                             </thead>
                         </table>
@@ -65,7 +67,11 @@
                                         echo "<tr class='row100 body'>";
                                             echo "<td class='cell100 column1'>" . $r['id'] . "</td>";
                                             echo "<td class='cell100 column2'>" . $r['date'] . "</td>";
-                                            echo "<td class='cell100 column3'>" . $r['doctor_id'] . "</td>";
+                                            echo "<td class='cell100 column3'>" . $r['time'] . "</td>";
+                                            echo "<td class='cell100 column4'>" . $r['doctor_id'] . "</td>";
+                                            echo "<td class='cell100 column5'>";
+                                                    echo "<center><a href='editAppointment.php' class='btn btn-outline-secondary'>Modify</a></center>";
+                                            echo "</td>";
                                         echo "</tr>";
                                     }
                                 ?>

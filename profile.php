@@ -107,10 +107,6 @@
       <!--<div class="avatar__name">John Smith</div> -->
     </div>
     <nav class="menu">
-      <a class="menu__item" href="profile.php">
-        <i class="menu__icon fa fa-home"></i>
-        <span class="menu__text">OVERVIEW</span>
-      </a>
       <a class="menu__item menu__item--active" href="profile.php">
         <i class="menu__icon fa fa-envelope"></i>
         <span class="menu__text">PROFILE</span>

@@ -432,6 +432,7 @@ sidebar {
 .calendar__week {
   grid-auto-rows: 100px;
   text-align: right;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .calendar__header {
@@ -443,7 +444,6 @@ sidebar {
 .calendar__day {
   padding: 16px;
 }
-
 
 :root {
   --red: #ED5454;
@@ -483,7 +483,6 @@ main {
   color: black;
 }
 
-
 .menu__icon {
   font-size: 1.3rem;
 }
@@ -504,11 +503,6 @@ main {
   font-weight: 400;
 }
 
-.calendar {
-  background-color: white;
-  border: 1px solid #e1e1e1;
-}
-
 .calendar__header > div {
   text-transform: uppercase;
   font-size: 0.8em;
@@ -517,11 +511,6 @@ main {
 
 .calendar__day {
   border-right: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1;
-}
-
-.calendar__day:last-child {
-  border-right: 0;
 }
 
 .toggle{
@@ -553,6 +542,10 @@ main {
   color: var(--red);
   font-weight: 500;
   box-shadow: 1px 2px 30px -5px var(--red);
+}
+
+button.date {
+  border-color: orange;
 }
 /* ----------- END: Content for Calendar Page ----------- */
 

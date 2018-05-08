@@ -107,7 +107,7 @@
       <!--<div class="avatar__name">John Smith</div> -->
     </div>
     <nav class="menu">
-      <a class="menu__item" href="calendar.html">
+      <a class="menu__item" href="profile.php">
         <i class="menu__icon fa fa-home"></i>
         <span class="menu__text">OVERVIEW</span>
       </a>
@@ -119,7 +119,7 @@
         <i class="menu__icon fa fa-list"></i>
         <span class="menu__text">APPOINTMENTS</span>
       </a>
-      <a class="menu__item menu__item" href="calendar.html">
+      <a class="menu__item menu__item" href="calendar.php">
         <i class="menu__icon fa fa-calendar"></i>
         <span class="menu__text">CALENDAR</span>
       </a>

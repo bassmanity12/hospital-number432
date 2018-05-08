@@ -44,6 +44,7 @@
                                 <th class="cell100 column1">Appointment ID</th>
                                 <th class="cell100 column2">Date</th>
                                 <th class="cell100 column3">Patient ID</th>
+                                <th class="cell100 column4">Approved</th>
                             </tr>
                             </thead>
                         </table>
@@ -65,6 +66,12 @@
                                             echo "<td class='cell100 column1'>" . $r['id'] . "</td>";
                                             echo "<td class='cell100 column2'>" . $r['date'] . "</td>";
                                             echo "<td class='cell100 column3'>" . $r['patient_id'] . "</td>";
+                                            echo "<td class='cell100 column4'>" . $r['allowed'] . "</td>";
+                                            
+                                            if($r['allowed'] == 'Y'){		//checks if allowed, if not yet -> outputs buttons to allow/reject
+                                                echo sprintf('<form action= <?php rejectEvent(%d) ?>' method='post'><input type='submit' value='Reject' /></form>', $r['id']);  
+                                                echo sprintf('<form action= <?php approveEvent(%d) ?>' method='post'><input type='submit' value='Approve' /></form>', $r['id']);
+                                            }
                                         echo "</tr>";
                                     }
                                 ?>
@@ -78,7 +85,10 @@
             <div class="logo">WELCOME</div>
             <div class="avatar">
             <div class="avatar__img">
-                <img src="../img/calendar.png" alt="avatar">
+                <img src="./img/calendar.png" alt="avatar">
+                <center>
+                    <?php echo $_SESSION['current_user']['fname']." ".$_SESSION['current_user']['lname'];?>
+                </center>
             </div>
             <!--<div class="avatar__name">John Smith</div> -->
             </div>

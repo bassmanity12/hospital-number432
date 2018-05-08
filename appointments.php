@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>24/7 Doctor | Appointments</title>
+    <title>24/7 Doctor | Appointments - Patient</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../CSS/style.css" /> -->
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/style.css" />
@@ -78,16 +78,19 @@
             <div class="logo">WELCOME</div>
             <div class="avatar">
             <div class="avatar__img">
-                <img src="../img/calendar.png" alt="avatar">
+                <img src="./img/calendar.png" alt="avatar">
+                <center>
+                    <?php echo $_SESSION['current_user']['fname']." ".$_SESSION['current_user']['lname'];?>
+                </center>
             </div>
             <!--<div class="avatar__name">John Smith</div> -->
             </div>
             <nav class="menu">
-            <a class="menu__item menu__item--active" href="profile.php">
+            <a class="menu__item" href="profile.php">
                 <i class="menu__icon fa fa-envelope"></i>
                 <span class="menu__text">PROFILE</span>
             </a>
-            <a class="menu__item" href="appointments.php">
+            <a class="menu__item menu__item--active" href="appointments.php">
                 <i class="menu__icon fa fa-list"></i>
                 <span class="menu__text">APPOINTMENTS</span>
             </a>

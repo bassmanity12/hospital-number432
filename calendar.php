@@ -112,11 +112,15 @@
                 <i class="menu__icon fa fa-envelope"></i>
                 <span class="menu__text">PROFILE</span>
             </a>
-            <a class="menu__item menu__item--active" href="appointments.php">
-                <i class="menu__icon fa fa-list"></i>
-                <span class="menu__text">APPOINTMENTS</span>
-            </a>
-            <a class="menu__item menu__item" href="calendar.php">
+            <?php
+                if ($_SESSION['current_user']['type'] == 'Doctor') {
+                    echo "<a href='appointmentsDoctor.php' class='menu__item'><i class='menu__icon fa fa-list'></i><span class='menu__text'>APPOINTMENTS</span></a>";
+                }
+                else {
+                    echo "<a href='appointments.php' class='menu__item'><i class='menu__icon fa fa-list'></i><span class='menu__text'>APPOINTMENTS</span></a>";
+                }
+            ?>
+            <a class="menu__item menu__item--active" href="calendar.php">
                 <i class="menu__icon fa fa-calendar"></i>
                 <span class="menu__text">CALENDAR</span>
             </a>

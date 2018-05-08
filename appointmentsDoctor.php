@@ -105,7 +105,6 @@
                     <?php echo $_SESSION['current_user']['fname']." ".$_SESSION['current_user']['lname'];?>
                 </center>
             </div>
-            <!--<div class="avatar__name">John Smith</div> -->
             </div>
             <nav class="menu">
             <a class="menu__item" href="profile.php">

@@ -40,7 +40,7 @@ function hideeditpopup() {
     editpopup.style.display="none";
     console.log("done");
 
-}
+}*/
 
 $(function () {
     $('[data-toggle="popover"]').popover()

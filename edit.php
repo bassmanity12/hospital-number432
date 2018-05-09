@@ -9,14 +9,11 @@
         exit;
     }
     // Get the Appointment ID to pass into the Actions.php file
-    //$eventid = $_GET['event_id'];
     if(isset($_GET['event_id'])){
         $event_id = $_GET['event_id'];
-        echo $event_id;
-             } else {
-        echo "failed";
-        
-      }
+        } else {
+        echo "failed"; 
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,10 +34,8 @@
                 <span onclick="hideeditpopup()" class="close" title="Close Modal">&times;</span>
             </div>
             <div class="container">
-                <?php
-                    // echo "<p><strong>Current Appointment Information:</strong>" . $_SESSION['current_user']['date'] . "at" . $_SESSION['current_user']['time'] "</p><br>"; -->
-                ?>
                 <div><center><h1>Modify Your Appointment</h1></center></div>
+                    <p><center> After modifying your appointment, your doctor will be alerted and process the appointment for approval:</p></center>
                 <p>
                     <label>Propose New Appointment Date:</label>
                     <input type="date" name="date" placeholder="Date"/>

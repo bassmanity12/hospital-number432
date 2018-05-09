@@ -20,18 +20,19 @@ $email = $_POST['email'];
 $age = $_POST['age'];
 $pass = $_POST['psw'];
 $passc = $_POST['pswc'];
+$type = $_POST['type'];
 $check_db = "SELECT * FROM patients WHERE email ='$email'";
 $result = $conn->query($check_db);
 $row = $result->fetch_assoc();
 
 
 if($result->num_rows == 0) {
-    $sql = "INSERT INTO patients(fname,lname,gender,email,age,password) VALUES ('$fname','$lname','$gender','$email','$age','$pass')";
+    $sql = "INSERT INTO patients(fname,lname,gender,email,age,password,type) VALUES ('$fname','$lname','$gender','$email','$age','$pass','$type')";
 
     if (mysqli_query($conn, $sql)) {
 //    echo("$fname");
-//    echo "New record created successfully";
-        header('Location:HTML/login.html');
+        // echo "New record created successfully - Welcome";
+        header('Location: profile.php');
     }
 }
 else{

@@ -8,6 +8,7 @@ $pdo = $dbConn->getConnection();
 
 if (isset($_GET['action']) && trim($_GET['action']) != '') {
     switch ($_GET['action']) {
+<<<<<<< HEAD
         case 'modifyEvent':
             if (isset($_GET['event_id'])) {
                 modifyEvent($_GET['event_id']);
@@ -15,6 +16,20 @@ if (isset($_GET['action']) && trim($_GET['action']) != '') {
             break;
 
         default:
+=======
+        case 'modifyEventTime':
+            if (isset($_GET['event_id'])) {
+                modifyEventTime($_GET['event_id']);
+            }
+            break;
+
+        case 'modifyEventTime':
+            if (isset($_GET['event_id'])) {
+                modifyEventDate($_GET['event_id']);
+            }
+            break;
+            default:
+>>>>>>> f4799bbeda5a36f0fc92badf737178f8bc06e9e5
             break;
     }
 } else {
@@ -22,6 +37,7 @@ if (isset($_GET['action']) && trim($_GET['action']) != '') {
     exit;
 }
 
+<<<<<<< HEAD
 function modifyEvent($id) {
     $new_date= $_POST['date'];
     $new_time = $_POST['time'];
@@ -44,3 +60,22 @@ function modifyEvent($id) {
     $stmt->bindValue(":id", $id, PDO::PARAM_INT);
     $stmt->execute();
 }
+=======
+function modifyEventTime($id) {
+    global $pdo;
+    $sqlUPDATE = "UPDATE events SET time='$_POST['new_time']' WHERE id = '$id'";
+    $pdo->query($sqlUPDATE); 
+    $_SESSION['message'] = "Appointment #{$id} has been rejected.";
+    header('location: appointments.php');
+    exit;
+}
+
+function modifyEventDate($id) {
+    global $pdo;
+    $sqlUPDATE = "UPDATE events SET allowed='Y' WHERE id = '$id'";
+    $pdo->query($sqlUPDATE);
+    $_SESSION['message'] = "Appointment #{$id} has been approved.";
+    header('location: appointments.php');
+    exit;
+}
+>>>>>>> f4799bbeda5a36f0fc92badf737178f8bc06e9e5

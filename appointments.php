@@ -46,8 +46,12 @@
                                 <th class="cell100 column2">Date</th>
                                 <th class="cell100 column3">Time</th>
                                 <th class="cell100 column4">Doctor ID</th>
+<<<<<<< HEAD
                                 <th class="cell100 column5">Confirmed?</th>
                                 <th class="cell100 column6"></th>
+=======
+                                <th class="cell100 column5"></th>
+>>>>>>> f4799bbeda5a36f0fc92badf737178f8bc06e9e5
                             </tr>
                             </thead>
                         </table>
@@ -70,10 +74,15 @@
                                             echo "<td class='cell100 column2'>" . $r['date'] . "</td>";
                                             echo "<td class='cell100 column3'>" . $r['time'] . "</td>";
                                             echo "<td class='cell100 column4'>" . $r['doctor_id'] . "</td>";
+<<<<<<< HEAD
                                             echo "<td class='cell100 column5'>" . $r['allowed'] . "</td>";
                                             echo "<td class='cell100 column6'>";
                                                // echo "<button class='popUp btn btn-outline-secondary' id='edit' onclick='showeditpopup()'>Modify</button>";
                                                echo "<a class='popUp btn btn-outline-secondary' id='edit' href='./edit.php'>Modify</a>";
+=======
+                                            echo "<td class='cell100 column5'>";
+                                                    echo "<center><a href='editAppointment.php' class='btn btn-outline-secondary'>Modify</a></center>";
+>>>>>>> f4799bbeda5a36f0fc92badf737178f8bc06e9e5
                                             echo "</td>";
                                         echo "</tr>";
                                     }
@@ -83,6 +92,7 @@
                     </div>
                 </div>
             </div><!-- end .calendar -->
+<<<<<<< HEAD
             <!-- <div id="editpopup" class="modal" style="display:none;">
                 <form action="./editEvent.php" method="POST" class="modal-content animate">
                     <div class="imgcontainer">
@@ -97,6 +107,8 @@
                     </div>
                 </form>
             </div> --> 
+=======
+>>>>>>> f4799bbeda5a36f0fc92badf737178f8bc06e9e5
         </main>
         <sidebar>
             <div class="logo">WELCOME</div>

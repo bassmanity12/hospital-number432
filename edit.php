@@ -8,8 +8,12 @@
         echo("<script>window.location = 'HTML/index.html';</script>");
         exit;
     }
+<<<<<<< HEAD
     // Get the Appointment ID to pass into the Actions.php file
     $event_id = $_GET['event_id'];
+=======
+
+>>>>>>> 4df0df0e2ef74e871c1b622b4406504d84387410
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,15 +29,25 @@
 </head>
 <body>
     <!-- <div id="editpopup" class="modal" style="display:none;"> -->
+<<<<<<< HEAD
         <form action="appointmentsPatientsActions.php?event_id=$event_id&action=modifyEvent" method="POST" class="modal-content animate">
+=======
+        <form action="./appointmentsPatientsActions.php?event_id={$r['id']}&action=modifyEvent" method="POST" class="modal-content animate">
+>>>>>>> 4df0df0e2ef74e871c1b622b4406504d84387410
             <div class="imgcontainer">
                 <span onclick="hideeditpopup()" class="close" title="Close Modal">&times;</span>
             </div>
             <div class="container">
+<<<<<<< HEAD
                 <?php
                     // echo "<p><strong>Current Appointment Information:</strong>" . $_SESSION['current_user']['date'] . "at" . $_SESSION['current_user']['time'] "</p><br>"; -->
                 ?>
                 <div><center><h1>Modify Your Appointment</h1></center></div>
+=======
+                <?
+                    // echo "<p><strong>Current Appointment Information:</strong>" . $r['date'] . "at" . $r['time']"</p><br>";
+                ?>
+>>>>>>> 4df0df0e2ef74e871c1b622b4406504d84387410
                 <p>
                     <label>Propose New Appointment Date:</label>
                     <input type="date" name="date" placeholder="Date"/>

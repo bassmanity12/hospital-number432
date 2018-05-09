@@ -1,25 +1,7 @@
-// window.onload = function(){
-//
-//
-// }
-// document.getElementById("signIn")
-//     .addEventListener("keypress", function(event) {
-//         event.preventDefault();
-//         if (event.keyCode === 13) {
-//             document.getElementsByClassName("enter").click();
-//         }
-//     });
-// //
-// function buttonCode()
-// {
-//     alert("Button code executed.");
-// }
-//
-// function ShowDiv() {
-//     document.getElementById("loginForm").style.display = "block";
 window.onload = function () {
     var loginpopup = document.getElementById(loginpopup);
     var registerpopup = document.getElementById(registerpopup);
+    var editpopup = document.getElementById(editpopup);
 
 }
 
@@ -42,6 +24,20 @@ function showregisterpopup() {
 }
 function hideregisterpopup() {
     registerpopup.style.display="none";
+    console.log("done");
+
+}
+
+function showeditpopup() {
+
+    editpopup.style.display="block";
+    editpopup.style.overflow="scroll";
+    console.log("done");
+
+}
+
+function hideeditpopup() {
+    editpopup.style.display="none";
     console.log("done");
 
 }

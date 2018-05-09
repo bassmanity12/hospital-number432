@@ -69,20 +69,15 @@
 <body>
 
 <h3>Login Form</h3>
-<h4><?php
-include "../dbconfig.php";
-$error;
 
-?>
-</h4>
-<form method="post" action="http://localhost/hospital-number432/dbcheck.php">
+<form method="post" action="../profile.php">
     <div class="imgcontainer">
         <img src="../img/logo.png" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
         <label for="Email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input type="email" placeholder="Enter Email" name="email" required>
 
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
@@ -95,11 +90,21 @@ $error;
         </label>
     </div>
 
+    <h4 class="Error" style="color: red"><?php
+        include 'dbcheck.php';
+        echo $_SESSION['errors'];
+        unset ($_SESSION["errors"]);
+
+
+        ?>
+    </h4>
+
     <div class="container" style="background-color:#f1f1f1">
         <button type="button" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
 </form>
+
 
 </body>
 </html>

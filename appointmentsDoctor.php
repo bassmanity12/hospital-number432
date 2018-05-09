@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>24/7 Doctor | Appointments - Patient</title>
+    <title>24/7 Doctor | Appointments - Doctor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../CSS/style.css" /> -->
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/style.css" />
@@ -34,8 +34,8 @@
         <main>
         <div class="toolbar">
             <div class="col-md-6 current-month">May 2018</div>
-                <div class="col-md-6" style="text-align: right" > <a href="logout.php">Logout</a></div>
-            </div>
+            <div class="col-md-6" style="text-align: right" > <a href="logout.php">Logout</a></div>
+        </div>
             <?php
             if (isset($_SESSION['message']) && trim($_SESSION['message']) != '') {
                 echo "<div class='alert alert-primary'>{$_SESSION['message']}</div>";
@@ -51,8 +51,8 @@
                                 <th class="cell100 column1">Appointment ID</th>
                                 <th class="cell100 column2">Date</th>
                                 <th class="cell100 column3">Time</th>
-                                <th class="cell100 column4">Doctor ID</th>
-                                <th class="cell100 column5">Confirmed?</th>
+                                <th class="cell100 column4">Patient ID</th>
+                                <th class="cell100 column5">Approved</th>
                                 <th class="cell100 column6"></th>
                             </tr>
                             </thead>
@@ -72,14 +72,23 @@
 
                                     while ($r = $q->fetch()) {
                                         echo "<tr class='row100 body'>";
+                                            $id = $r['id'];
                                             echo "<td class='cell100 column1'>" . $r['id'] . "</td>";
                                             echo "<td class='cell100 column2'>" . $r['date'] . "</td>";
                                             echo "<td class='cell100 column3'>" . $r['time'] . "</td>";
-                                            echo "<td class='cell100 column4'>" . $r['doctor_id'] . "</td>";
+                                            echo "<td class='cell100 column4'>" . $r['patient_id'] . "</td>";
                                             echo "<td class='cell100 column5'>" . $r['allowed'] . "</td>";
                                             echo "<td class='cell100 column6'>";
-                                               // echo "<button class='popUp btn btn-outline-secondary' id='edit' onclick='showeditpopup()'>Modify</button>";
-                                               echo "<a class='popUp btn btn-outline-secondary' id='edit' href='./edit.php?event_id={$r['id']}'>Modify</a>";
+                                                if ($r['allowed'] == 'Y') {
+                                                    echo "<center><a href='appointmentsDoctorActions.php?event_id={$r['id']}&action=rejectEvent' class='btn btn-outline-secondary'>Reject</a></center>";
+                                                    //echo "<button type='submit' formaction='actions.php'>Reject</button>";
+                                                    //echo "</form>";
+                                                } else {
+                                                    echo "<center><a href='appointmentsDoctorActions.php?event_id={$r['id']}&action=approveEvent' class='btn btn-outline-secondary'>Approve</a></center>";
+                                                    //echo "<form method='post'>";
+                                                    //    echo "<button type='submit' formaction='actions.php'>Approve</button>";
+                                                    //echo "</form>";
+                                                }
                                             echo "</td>";
                                         echo "</tr>";
                                     }
@@ -88,8 +97,7 @@
                         </table>
                     </div>
                 </div>
-            </div>
-            <!-- end .calendar -->
+            </div><!-- end .calendar -->
         </main>
         <sidebar>
             <div class="logo">WELCOME</div>
@@ -100,7 +108,6 @@
                     <?php echo $_SESSION['current_user']['fname']." ".$_SESSION['current_user']['lname'];?>
                 </center>
             </div>
-            <!--<div class="avatar__name">John Smith</div> -->
             </div>
             <nav class="menu">
             <a class="menu__item" href="profile.php">

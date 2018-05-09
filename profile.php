@@ -31,6 +31,7 @@
         <div class="container">
             <div class="row">
             <div class="col-md-5  toppad  pull-right col-md-offset-3">
+              <a href="edit.php" >Edit Profile</a>
               <a href="logout.php" >Logout</a>
              <br>
             </div>

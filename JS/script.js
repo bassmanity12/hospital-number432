@@ -1,7 +1,7 @@
 window.onload = function () {
     var loginpopup = document.getElementById(loginpopup);
     var registerpopup = document.getElementById(registerpopup);
-    var editpopup = document.getElementById(editpopup);
+    // var editpopup = document.getElementById(editpopup);
 
 }
 
@@ -28,7 +28,7 @@ function hideregisterpopup() {
 
 }
 
-function showeditpopup() {
+/* function showeditpopup() {
 
     editpopup.style.display="block";
     editpopup.style.overflow="scroll";
@@ -40,7 +40,7 @@ function hideeditpopup() {
     editpopup.style.display="none";
     console.log("done");
 
-}*/
+} */
 
 $(function () {
     $('[data-toggle="popover"]').popover()

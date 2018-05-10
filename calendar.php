@@ -1,6 +1,10 @@
 <?php 
     session_start();
-    
+
+    require_once("databaseConnection.php");
+    $dbConn = new DatabaseConnection();
+    $pdo = $dbConn->getConnection();
+
     if (isset($_SESSION['current_user']) && isset($_SESSION['current_user']['id'])) {
         // Right now we don't do anything
     } else {
@@ -9,6 +13,36 @@
         exit;
     }
 
+    /**
+     * Function to check if given date has any events for the specified user
+     */
+    function check_events($date, $current_user_id) {
+        global $pdo;
+        if ($_SESSION['current_user']['type'] == 'Doctor') {
+            $sql = "SELECT time FROM events WHERE doctor_id = " . $current_user_id . " AND date = '{$date}'";
+        } else {
+            $sql = "SELECT time FROM events WHERE patient_id = " . $current_user_id . " AND date = '{$date}'";
+        }
+        $q = $pdo->query($sql);
+
+        $events = '';
+        while ($r = $q->fetch()) {
+            if (isset($r['time'])) {
+                //Send Doctors and Patients to Corrert Pages
+                if ($_SESSION['current_user']['type'] == 'Doctor') {
+                    $events .= "<br><a href='appointmentsDoctor.php'><span>{$r['time']}</span></a>";
+                }
+                else {
+                    $events .= "<br><a href='appointments.php'><span>{$r['time']}</span></a>";
+                }
+            }
+        }
+
+        return $events;
+    }
+    /**
+     * Function to build php calendar
+     */
     function build_calendar($month,$year) {
 
         $daysOfWeek = array('S','M','T','W','T','F','S');
@@ -37,7 +71,15 @@
             }
             $currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
             $date = "$year-$month-$currentDayRel";
-            $calendar .= "<td class='calendar__day day' rel='$date'>$currentDay</td>";
+            // Start table day cell
+            $calendar .= "<td class='calendar__day day' rel='$date'>";
+            $calendar .=    $currentDay;
+            $calendar .=    check_events($date, $_SESSION['current_user']['id']);
+            //$calendar .=    "<p>John doe";
+            //$calendar .=        "<span>12:00</span>";
+            //$calendar .=    "</p>";
+            $calendar .= "</td>";
+            // End table day cell
             $currentDay++;
             $dayOfWeek++;
         }
@@ -74,8 +116,12 @@
 </div>
 <div class="wrapper">
     <main>
+        <div>
+            <center><h1>Upcoming Appointments:</h1></center>
+        </div>
         <div class="toolbar">
             <div class="current-month">May 2018</div>
+            <a href="logout.php" >Logout</a>
         </div>
         <div class="calendar">
             <div class="calendar__header">

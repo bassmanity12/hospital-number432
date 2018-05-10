@@ -37,7 +37,7 @@
                     $_SESSION['message'] = '';
                 }
                 ?>
-              <a href="editProfile.php">Edit Profile</a>
+              <!-- <a href="editProfile.php">Edit Profile</a> -->
               <a href="logout.php" >Logout</a>
              <br>
             </div>

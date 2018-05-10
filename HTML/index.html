@@ -10,54 +10,54 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<header>
-<div id="navbar" class="navbarMain">
-<ul>
-    <li><a class="active" href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-        <!-- //////////////////////////Slider Below////////////////////////// -->
+    <header>
+        <div id="navbar" class="navbarMain">
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div>
+            <!-- //////////////////////////Slider Below////////////////////////// -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
-              <!-- Slide One - Set the background image for this slide in the line below -->
-              <div class="carousel-item active" style="background-image: url('../img/slider1.jpg')">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('../img/slider1.jpg')">
                 <div class="carousel-caption d-none d-md-block">
                         <h3>Get Started for Free!</h3>
                 </div>
-              </div>
-              <!-- Slide Two - Set the background image for this slide in the line below -->
-              <div class="carousel-item" style="background-image: url('../img/slider2.jpg')">
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('../img/slider2.jpg')">
                 <div class="carousel-caption d-none d-md-block">
                         <h3>Our Doctors are Ready to Help!</h3>
                 </div>
-              </div>
-              <!-- Slide Three - Set the background image for this slide in the line below -->
-              <div class="carousel-item" style="background-image: url('../img/slider3.jpg')">
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('../img/slider3.jpg')">
                 <div class="carousel-caption d-none d-md-block">
                         <h3>Register for Free!</h3>
                 </div>
-              </div>
+            </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
             </a>
-      </div>
+        </div>
     </header>
 
-    <div class="container">
+        <div class="container">
         <div class="row">
             <div class="col 12">
                 <center><img class="logo" src="../img/logo.png"></center>
@@ -101,58 +101,58 @@
                     </div>
                 </form>
         </div>
-<!--creating a similar register popup;-->
-<div id="registerpopup" class="modal" style="display:none">
+    <!--creating a similar register popup;-->
+    <div id="registerpopup" class="modal" style="display:none">
 
-    <form class="modal-content animate" action="../register.php" method="post">
+        <form class="modal-content animate" action="../register.php" method="post">
 
-        <div class="imgcontainer">
+            <div class="imgcontainer">
 
-            <span onclick="hideregisterpopup()" class="close" title="Close Modal">&times;</span>
+                <span onclick="hideregisterpopup()" class="close" title="Close Modal">&times;</span>
 
-            <img src="../img/logo.png" alt="logo" class="logo">
+                <img src="../img/logo.png" alt="logo" class="logo">
 
-        </div>
-        <div class="container">
-            <label for="fname" ><b>First Name</b></label>
-            <input type="text" class="formtext" placeholder="First Name" name="fname" required>
+            </div>
+            <div class="container">
+                <label for="fname" ><b>First Name</b></label>
+                <input type="text" class="formtext" placeholder="First Name" name="fname" required>
 
-            <label for="lname" ><b>Last Name</b></label>
-            <input type="text" class="formtext" placeholder="Last Name" name="lname" required>
-          ​
-            <label for="Gender"><b>Gender</b></label><br>
-            <input type="radio" name="gender" value="male" checked> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
+                <label for="lname" ><b>Last Name</b></label>
+                <input type="text" class="formtext" placeholder="Last Name" name="lname" required>
+            ​
+                <label for="Gender"><b>Gender</b></label><br>
+                <input type="radio" name="gender" value="male" checked> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
 
-            <label for="Email"><b>Email</b></label>
-            <input type="text" class="formtext" placeholder="E-mail" name="email" required>
+                <label for="Email"><b>Email</b></label>
+                <input type="text" class="formtext" placeholder="E-mail" name="email" required>
 
-            <label for="Age"><b>Age</b></label>
-            <input type="number" class="formtext" placeholder="Age" name="age" required>
-            <br>
+                <label for="Age"><b>Age</b></label>
+                <input type="number" class="formtext" placeholder="Age" name="age" required>
+                <br>
 
-            <label for="type"><b>Type of account</b></label><br>
-            <input type="radio" name="type" value="Patient" checked> Patient<br>
-            <input type="radio" name="type" value="Doctor"> Doctor<br>
+                <label for="type"><b>Type of account</b></label><br>
+                <input type="radio" name="type" value="Patient" checked> Patient<br>
+                <input type="radio" name="type" value="Doctor"> Doctor<br>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password"class="formtext" placeholder="Please select a Password" name="psw" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password"class="formtext" placeholder="Please select a Password" name="psw" required>
 
-            <label for="psw"><b>Verify Password</b></label>
+                <label for="psw"><b>Verify Password</b></label>
 
-            <input type="password"class="formtext" placeholder="Retype your password" name="pswc" required>
+                <input type="password"class="formtext" placeholder="Retype your password" name="pswc" required>
 
-            <button type="submit">Register</button>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
+                <button type="submit">Register</button>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
 
-            <!--<span class="psw"> <a href="#">Forgot password?</a></span>-->
+                <!--<span class="psw"> <a href="#">Forgot password?</a></span>-->
 
-        </div>
+            </div>
 
-    </form>
+        </form>
 
-</div>
+    </div>
 
 
 
@@ -164,27 +164,27 @@
 
             <!--var modal = document.getElementById('id01');-->
 
-<!--​-->
+    <!--​-->
 
-            <!--// When the user clicks anywhere outside of the modal, close it-->
+                <!--// When the user clicks anywhere outside of the modal, close it-->
 
-            <!--window.onclick = function(event) {-->
+                <!--window.onclick = function(event) {-->
 
-                <!--if (event.target == modal) {-->
+                    <!--if (event.target == modal) {-->
 
-                    <!--modal.style.display = "none";-->
+                        <!--modal.style.display = "none";-->
 
+                    <!--}-->
                 <!--}-->
-            <!--}-->
-        <!--</script>-->
+            <!--</script>-->
 
 
 
 
-            </div>
+                </div>
 
-<!--adding a footer-->
-<div id="footer" class="navbarMain">
+    <!--adding a footer-->
+    <div id="footer" class="navbarMain">
         <ul style="float:left"></ul>
         <li class="copyright">Copyright (c) 2018 Medical Booking Inc.</li>
         <ul style="float: right">
@@ -197,9 +197,6 @@
                 data-content="Our website contains general medical information. The medical information is not advice and should not be treated as such.">Disclaimer</button></li>
         </ul>
     </div>
-
-
-
 
 
 <script src="../JS/script.js"></script>

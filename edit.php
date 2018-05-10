@@ -31,8 +31,7 @@
     <!-- <div id="editpopup" class="modal" style="display:none;"> -->
         <form action="appointmentsPatientsActions.php?event_id=<?php echo $event_id ?>&action=modifyEvent" method="POST" class="modal-content animate">
         <div class="imgcontainer">
-                <span onclick="hideeditpopup()" class="close" title="Close Modal">&times;</span>
-            </div>
+        </div>
             <div class="container">
                 <div><center><h1>Modify Your Appointment</h1></center></div>
                     <p><center> After modifying your appointment, your doctor will be alerted and process the appointment for approval:</p></center>

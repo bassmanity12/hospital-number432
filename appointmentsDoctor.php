@@ -66,7 +66,7 @@
                                     $dbConn = new DatabaseConnection();
                                     $pdo = $dbConn->getConnection();
 
-                                    $sql = "SELECT * FROM events WHERE patient_id = " . $_SESSION['current_user']['id'];
+                                    $sql = "SELECT * FROM events WHERE doctor_id = " . $_SESSION['current_user']['id'];
                                     $q = $pdo->query($sql);
                                     $q->setFetchMode(PDO::FETCH_ASSOC);
 

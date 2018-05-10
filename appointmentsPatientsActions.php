@@ -3,7 +3,7 @@ session_start();
 require_once("databaseConnection.php");
 $dbConn = new DatabaseConnection();
 $pdo = $dbConn->getConnection();
-var_dump($_GET['id']);
+
 if (isset($_GET['action']) && trim($_GET['action']) != '') {
     switch ($_GET['action']) {
         case 'modifyEvent':
@@ -41,9 +41,12 @@ function addEvent($id) {
     global $pdo;
     $new_date= $_POST['date'];
     $new_time = $_POST['time'];
-    $sqlUPDATE = "INSERT INTO events (date, time, patient_id, doctor_id, allowed) VALUES ('{$new_date}', '{$new_time}','{$id}','81', 'N')";
+    if(isset($_POST['submit'])){
+        $doctor_id = $_POST['doctor'];
+    }
+    $sqlUPDATE = "INSERT INTO events (date, time, patient_id, doctor_id, allowed) VALUES ('{$new_date}', '{$new_time}','{$id}','{$doctor_id}', 'N')";
     $pdo->query($sqlUPDATE);
-    $_SESSION['message'] = "Appointment #{$id} has been requested. Waiting for approval.";
+    $_SESSION['message'] = "Appointment has been requested. Waiting for approval.";
     header('location: appointments.php');
     exit;
 }

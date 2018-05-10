@@ -1,5 +1,8 @@
 <?php
     session_start();
+    require_once("databaseConnection.php");
+    $dbConn = new DatabaseConnection();
+    $pdo = $dbConn->getConnection();
     
     if (isset($_SESSION['current_user']) && isset($_SESSION['current_user']['id'])) {
         // Right now we don't do anything
@@ -11,7 +14,6 @@
     // Get the Appointment ID to pass into the Actions.php file
     if(isset($_GET['id'])){
         $patient_id = $_GET['id'];
-        var_dump($patient_id);
         } else {
         echo "failed"; 
     }
@@ -42,6 +44,20 @@
                     <br>
                     <label>Propose Appointment Time:</label>
                     <input type="time" name="time" placeholder="Time"/>
+                    <br>
+                    <div class="form-group col-6">
+                        <label for="sel1">Select Doctor from List:</label>
+                            <select class="form-control" name="doctor">
+                                <?php
+                                    global $pdo;
+                                    $sql = "SELECT fname, lname, id FROM patients WHERE type = 'Doctor'";
+                                    $q = $pdo->query($sql);
+                                    while ($r = $q->fetch()) {
+                                        echo "<option value='{$r['id']}'>Dr. {$r['fname']} {$r['lname']}</option>";
+                                    }
+                                ?> 
+                            </select>
+                    </div>
                 </p>
                 <button type="submit" name="submit" value="Submit">Submit</button>
             </div>

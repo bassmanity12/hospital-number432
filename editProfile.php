@@ -41,7 +41,7 @@
                           <?php
                             include "dbcheck.php";
                             echo $_SESSION['current_user']['fname']." ".$_SESSION['current_user']['lname'];
-                            var_dump($_SESSION['current_user']['id']);
+                            
                           ?>
                       </h4>
                   </div>
@@ -54,36 +54,35 @@
                           <tbody>
                                 <tr>
                                 <br>
-                                <?php var_dump($_SESSION['current_user']['id']); ?>
-                                <form id="updateForm" action="editHandler.php?profile_id=$_SESSION['current_user']['id']&action=updateProfile" method="POST">
-							      <input type="hidden" name="data[id]" value="<?= $_SESSION['current_user']['id']; ?>"/>
+                                
+                                <form id="updateForm" name="data" action="edithandler.php" method="POST">
+							      <input type="hidden" name="id" value="<?= $_SESSION['current_user']['id']; ?>"/>
 							      <p>
 							          <label>Email: </label>
-							          <input type="text" name="data[email]" value="<?=  $_SESSION['current_user']['email']; ?>"/>
+							          <input type="text" name="email" value="<?=  $_SESSION['current_user']['email']; ?>"/>
                                   </p>
 							      <p>
 							          <label>First Name: </label>
-							          <input type="text" name="data[fname]" value="<?=  $_SESSION['current_user']['fname']; ?>"/>
+							          <input type="text" name="fname" value="<?=  $_SESSION['current_user']['fname']; ?>"/>
 							      </p>
 							      <p>
 							          <label>Last Name: </label>
-							          <input type="text" name="data[lname]" value="<?=  $_SESSION['current_user']['lname']; ?>"/>
+							          <input type="text" name="lname" value="<?=  $_SESSION['current_user']['lname']; ?>"/>
                                   </p>
 							      <p>
 							          <label>Age: </label>
-							         <input type="text" name="data[age]" value="<?=  $_SESSION['current_user']['age']; ?>"/>
+							         <input type="text" name="age" value="<?=  $_SESSION['current_user']['age']; ?>"/>
                                   </p>
 							      <p>
 							          <label>Gender: </label>
-							          <input type="text" name="data[gender]" value="<?= $_SESSION['current_user']['gender']; ?>"/>
+							          <input type="text" name="gender" value="<?= $_SESSION['current_user']['gender']; ?>"/>
                                   </p>
 							      <p>
 							          <label>Password: </label>
-							          <input type="text" name="data[password]" value="<?= $_SESSION['current_user']['password']; ?>"/>
+							          <input type="text" name="password" value="<?= $_SESSION['current_user']['password']; ?>"/>
                                   </p>
                                   <p>
-                                    <button type="submit">Login</button>
-                                    <!-- <center><a href='editHandler.php' class='btn btn-primary'>Update Your Profile</a></center> -->
+                                    <button type="submit">Update your profile</button>
 							  </form>
                           </tbody>
                         </table>

@@ -90,8 +90,11 @@
                 </div>
             </div>
             <!-- end .calendar -->
+            <div> 
+                <a class="btn btn-primary" href="./addAppointment.php?id=<?php echo $_SESSION['current_user']['id'] ?>">Request a New Appointment</a>
+            </div>
         </main>
-        <sidebar>
+         <sidebar>
             <div class="logo">WELCOME</div>
             <div class="avatar">
             <div class="avatar__img">

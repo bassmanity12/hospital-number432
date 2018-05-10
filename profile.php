@@ -31,6 +31,12 @@
         <div class="container">
             <div class="row">
             <div class="col-md-5  toppad  pull-right col-md-offset-3">
+                <?php
+                if (isset($_SESSION['message']) && trim($_SESSION['message']) != '') {
+                    echo "<div class='alert alert-primary'>{$_SESSION['message']}</div>";
+                    $_SESSION['message'] = '';
+                }
+                ?>
               <a href="editProfile.php">Edit Profile</a>
               <a href="logout.php" >Logout</a>
              <br>

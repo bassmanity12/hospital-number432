@@ -49,16 +49,13 @@ exit;
 		
 				$statement->execute($params);
 		
-				$_SESSION['success_message'] = 'Update was successful';
-				header('Location: profile.php');
+				$_SESSION['message'] = "Your profile has been updated!";
+				header('location: profile.php');
 				return;
 			} catch (PDOException $e) {
 				var_dump($e->getMessage());
 				die();
 			}
 	}
-
-	unset($_SESSION['success_message']);
-	unset($_SESSION['error_message']);
 	// call to the update function
 	updateProfile($id);

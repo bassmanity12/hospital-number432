@@ -31,7 +31,6 @@
         <div class="container">
             <div class="row">
             <div class="col-md-5  toppad  pull-right col-md-offset-3">
-              <a href="editProfile.php">Edit Profile</a>
               <a href="logout.php" >Logout</a>
              <br>
             </div>
@@ -42,6 +41,7 @@
                           <?php
                             include "dbcheck.php";
                             echo $_SESSION['current_user']['fname']." ".$_SESSION['current_user']['lname'];
+                            var_dump($_SESSION['current_user']['id']);
                           ?>
                       </h4>
                   </div>
@@ -53,44 +53,42 @@
                         <table class="table table-user-information">
                           <tbody>
                                 <tr>
-                                <td>ID</td>
-                                <td><?php echo $_SESSION['current_user']['id']; ?></td>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <br>
-                                <td>Age</td>
-                                <td><?php echo $_SESSION['current_user']['age']; ?>
-                                    <br>
-                                </td>
-                                    <br>
-                                </tr>
-                                <tr>
-                                <td>Gender</td>
-                                <td><?php echo $_SESSION['current_user']['gender']; ?>
-                                </td>
-                                    <br>
-                                </tr>
-                                <tr>
-                                <td>Email</td>
-                                <td><?php echo $_SESSION['current_user']['email']; ?></td>
-                                </tr>
-                                <tr>
-                                <td>Account Type</td>
-                                <td><?php echo $_SESSION['current_user']['type']; ?></td>
-                                </tr>
+                                <br>
+                                <?php var_dump($_SESSION['current_user']['id']); ?>
+                                <form id="updateForm" action="editHandler.php?profile_id=$_SESSION['current_user']['id']&action=updateProfile" method="POST">
+							      <input type="hidden" name="data[id]" value="<?= $_SESSION['current_user']['id']; ?>"/>
+							      <p>
+							          <label>Email: </label>
+							          <input type="text" name="data[email]" value="<?=  $_SESSION['current_user']['email']; ?>"/>
+                                  </p>
+							      <p>
+							          <label>First Name: </label>
+							          <input type="text" name="data[fname]" value="<?=  $_SESSION['current_user']['fname']; ?>"/>
+							      </p>
+							      <p>
+							          <label>Last Name: </label>
+							          <input type="text" name="data[lname]" value="<?=  $_SESSION['current_user']['lname']; ?>"/>
+                                  </p>
+							      <p>
+							          <label>Age: </label>
+							         <input type="text" name="data[age]" value="<?=  $_SESSION['current_user']['age']; ?>"/>
+                                  </p>
+							      <p>
+							          <label>Gender: </label>
+							          <input type="text" name="data[gender]" value="<?= $_SESSION['current_user']['gender']; ?>"/>
+                                  </p>
+							      <p>
+							          <label>Password: </label>
+							          <input type="text" name="data[password]" value="<?= $_SESSION['current_user']['password']; ?>"/>
+                                  </p>
+                                  <p>
+                                    <button type="submit">Login</button>
+                                    <!-- <center><a href='editHandler.php' class='btn btn-primary'>Update Your Profile</a></center> -->
+							  </form>
                           </tbody>
                         </table>
                       </div>
                       <div>
-                            <?php
-                                if ($_SESSION['current_user']['type'] == 'Doctor') {
-                                    echo "<a href='appointmentsDoctor.php' class='btn btn-primary'>Manage Your Appointments</a>";
-                                }
-                                else {
-                                    echo "<a href='appointments.php' class='btn btn-primary'>Manage Your Appointments</a>";
-                                }
-                            ?>
                       </div>
                     </div>
                   </div>
